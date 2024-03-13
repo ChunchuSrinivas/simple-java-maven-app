@@ -10,3 +10,5 @@ main application works as expected. The results of these tests are saved to a
 JUnit XML report.
 
 This is to check Jenkins CI CD pipeline via poll scm till Docker push to ECR
+
+This is to check and record the task.
