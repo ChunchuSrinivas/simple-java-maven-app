@@ -11,4 +11,4 @@ JUnit XML report.
 
 This is to check Jenkins CI CD pipeline via poll scm till Docker push to ECR
 
-This is to check and record the task.
+This is to check and record the DevOps task.
