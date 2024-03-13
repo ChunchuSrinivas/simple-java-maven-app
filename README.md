@@ -9,4 +9,4 @@ The repository contains a simple Java application which outputs the string
 main application works as expected. The results of these tests are saved to a
 JUnit XML report.
 
-This is to check Jenkins CI CD pipeline via poll scm
+This is to check Jenkins CI CD pipeline via poll scm till Docker push to ECR
