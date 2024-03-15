@@ -4,11 +4,11 @@
     <modelVersion>4.0.0</modelVersion>
  
     <groupId>com.tcs.angularjs</groupId>
-    <artifactId>SampleWebApp</artifactId>
+    <artifactId>springbootApp</artifactId>
     <version>0.0.1</version>
     <packaging>jar</packaging>
-    <name>CprimeDevOpsTask</name>
-    <description>SampleWebApplication</description>
+    <name>MyAwesomeApp</name>
+    <description>SpringBoot Angularjs</description>
  
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -28,7 +28,14 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
- 
+
+	<dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.10.2</version>
+            <scope>test</scope>
+        </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
