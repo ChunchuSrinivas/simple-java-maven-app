@@ -7,8 +7,8 @@
     <artifactId>springbootApp</artifactId>
     <version>0.0.1</version>
     <packaging>jar</packaging>
-    <name>MyAwesomeApp</name>
-    <description>SpringBoot Angularjs</description>
+    <name>SampleWebApp</name>
+    <description>DevOpsTaskCprime</description>
  
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -32,7 +32,8 @@
 	<dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
-            <version>5.10.2</version>
+       
+	    <version>5.10.2</version>
             <scope>test</scope>
         </dependency>
 
@@ -55,7 +56,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
         </plugins>
-	<finalName>springbootApp</finalName>
+	<finalName>samplewebApp</finalName>
     </build>
  
 </project>
