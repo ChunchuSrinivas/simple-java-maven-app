@@ -1,4 +1,4 @@
-FROM openjdk:17-jdk-alpine
-MAINTAINER srinivas
-COPY target/my-app-1.0-SNAPSHOT.jar app.jar
-ENTRYPOINT ["java","-jar","/app.jar"]
+FROM lolhens/baseimage-openjre
+ADD target/samplewebapp.jar webapp.jar
+EXPOSE 80
+ENTRYPOINT ["java", "-jar", "webpp.jar"]
