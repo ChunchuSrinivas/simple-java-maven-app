@@ -1,0 +1,50 @@
+pipeline {
+    agent any
+
+    environment {
+        registryName = "cprimecontainer"
+        registryCredential = 'AzureLogin'
+        registryUrl = 'cprimecontainer.azurecr.io'
+    } 
+    
+    stages {
+        stage('checkout') {
+            steps {
+                checkout changelog: false, poll: false, scm: scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: 'Jenkins_Github_Auth', url: 'https://github.com/ChunchuSrinivas/simple-java-maven-app.git']])
+            }
+        }
+        
+        stage('Source Code Build') {
+            steps {
+                sh "mvn clean install"
+            }
+        }
+
+        stage('Build Docker Image') {
+            steps {
+                script {
+                    dockerImage = docker.build registryName
+                }
+            }
+            
+        }
+        
+        stage ("Push Image") {
+            steps {
+                script {
+                    docker.withRegistry( "http://${registryUrl}", registryCredential ) {
+                        dockerImage.push()
+                    }
+                }
+            }
+        }
+        
+        stage ("Deploy to K8S") {
+            steps {
+                withKubeConfig(caCertificate: '', clusterName: '', contextName: '', credentialsId: 'k8sfile', namespace: '', restrictKubeConfigAccess: false, serverUrl: '') {
+                    sh "kubectl apply -f aks-deploy-from-acr.yml"
+                }
+            }
+        }
+    }
+}
