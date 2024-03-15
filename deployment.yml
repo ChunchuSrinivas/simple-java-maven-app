@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: cprimedevopstask 
-          image: myacrrepo431.azurecr.io/akannanspringbootapp
+          image: cprimecontainer.azurecr.io/cprimedevopstask
           ports:
           - containerPort: 80
