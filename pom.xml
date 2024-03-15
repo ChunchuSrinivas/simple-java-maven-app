@@ -7,8 +7,8 @@
     <artifactId>springbootApp</artifactId>
     <version>0.0.1</version>
     <packaging>jar</packaging>
-    <name>sampleaewbapp</name>
-    <description>DevOpsTaskCprime</description>
+    <name>MyAwesomeApp</name>
+    <description>SpringBoot Angularjs</description>
  
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -29,14 +29,13 @@
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
 
-	<dependency>
+        <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
-       
-	    <version>5.10.2</version>
+       	    <version>5.10.2</version>
             <scope>test</scope>
         </dependency>
-
+	    
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -56,7 +55,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
         </plugins>
-	<finalName>sampleaewbapp</finalName>
+	<finalName>springbootApp</finalName>
     </build>
  
 </project>
