@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: sample-web-app-dep
+  name: my-springboot-deployment
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: sample-web-app
+      app: springboot-app
   template:
     metadata:
       labels:
-        app: sample-web-app
+        app: springboot-app
     spec:
       containers:
-      - name: my-sample-web-app
-        image: cprimecontainer.azurecr.io/akannan1087/sample-web-app:#{Build.BuildId}#
+      - name: my-springboot-app
+        image: cprimecontainer.azurecr.io/cprimecontainer:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 8085
@@ -24,9 +24,9 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app: sample-web-app
-    k8s-app: sample-web-app
-  name: sample-web-app
+    app: springboot-app
+    k8s-app: springboot-app
+  name: springboot-app
 spec:
   ports:
   - name: http
@@ -35,4 +35,4 @@ spec:
     targetPort: 8085
   type: LoadBalancer
   selector:
-    app: sample-web-app
+    app: springboot-app
